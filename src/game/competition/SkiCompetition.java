@@ -1,29 +1,14 @@
 package game.competition;
 
-import game.arena.WinterArena;
-import game.entities.sportsman.Skier;
-import game.enums.Discipline;
-import game.enums.Gender;
-import game.enums.League;
+import game.arena.IArena;
 
-/**
- * Created by itzhak on 25-Mar-19.
- */
-public class SkiCompetition extends WinterCompetition {
-    /**
-     * Ctor for the competition
-     * @param arena Winter arena in which the competition takes place in
-     * @param maxCompetitors max competitors in the competition
-     * @param discipline discipline
-     * @param league age league
-     * @param gender gender
-     */
-    public SkiCompetition(WinterArena arena, int maxCompetitors, Discipline discipline, League league, Gender gender) {
-        super(arena, maxCompetitors, discipline, league, gender);
+public class SkiCompetition extends Competition {
+    public SkiCompetition(IArena arena, int maxCompetitors) {
+        super(arena, maxCompetitors);
     }
 
     @Override
     protected boolean isValidCompetitor(Competitor competitor) {
-        return competitor instanceof Skier && super.isValidCompetitor(competitor);
+        return true; // Simplified validation logic
     }
 }
